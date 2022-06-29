@@ -1,6 +1,9 @@
 import { Flex, Text } from '@chakra-ui/react';
 import React from 'react';
+import CompleteAgmt from './components/CompleteAgmt';
 import CreateAgmt from './components/CreateAgmt';
+import MyAgmt from './components/MyAgmt';
+import SignAgmt from './components/SignAgmt';
 import UploadDoc from './components/UploadDoc';
 import GetAccount from './hooks/GetAccount';
 
@@ -11,8 +14,10 @@ const Agreement = () => {
                 <CreateAgmt/>
                 <UploadDoc/>
             </Flex>
-            <Flex minWidth={"50%"} >
-
+            <Flex minWidth={"50%"} flexDirection={'column'} >
+                <MyAgmt/>
+                <SignAgmt/>
+                <CompleteAgmt/>
             </Flex>
         </Flex>
      );
