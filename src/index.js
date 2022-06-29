@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import '@rainbow-me/rainbowkit/styles.css';
 import {
   getDefaultWallets,
@@ -45,7 +46,12 @@ root.render(
       <RainbowKitProvider chains={chains}>
     <ChakraProvider>
       <Navbar/>
-    <Agreement/>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<App/>} />
+        <Route path='/Agreement' element={<Agreement/>} />
+      </Routes>
+      </BrowserRouter>
     </ChakraProvider>
     </RainbowKitProvider>
     </WagmiConfig>

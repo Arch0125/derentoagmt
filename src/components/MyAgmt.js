@@ -18,7 +18,7 @@ const MyAgmt = () => {
         setAgmts([]);
         for(let i =1;i<=parselist;i++){
             var agmt = await contract.getAgreements(i);
-            if(JSON.stringify(agmt.lender) === JSON.stringify(account)){
+            if((JSON.stringify(agmt.lender) === JSON.stringify(account))&&(agmt.status != 'Signed')){
                 setAgmts((agmts)=>[...agmts,agmt])
             }
         }
@@ -30,9 +30,10 @@ const MyAgmt = () => {
             <Text fontSize={"2xl"} fontWeight={"semibold"} color={'purple.700'} textAlign={'center'} mb={"20px"} >Agreements Sent</Text>
             <Button onClick={showAgmt} variant={"solid"} colorScheme={'purple'} >Show List</Button>
             <Divider/>
+            <Flex flexDirection={'column-reverse'} >
             {
-                 Object.keys(agmts).map((agmt, index) => (
-                     
+                Object.keys(agmts).map((agmt, index) => (
+                    
                     <Flex color={"blackAlpha.800"} flex={"1"} flexDirection={"row"} width={"100%"} height={"fit-content"} padding={"20px"} bgColor={"gray.50"} mt={"15px"} rounded={"2xl"} borderWidth={"1.5px"} borderColor={"gray.100"} >
                         
                         <Text>Agreement ID#{(agmts[index].agmtid).toString()} &nbsp; </Text>
@@ -49,7 +50,7 @@ const MyAgmt = () => {
                         
                     </Flex>
                  ))
-            }
+            }</Flex>
         </Flex>
      );
 }

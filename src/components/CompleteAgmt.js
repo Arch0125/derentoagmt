@@ -30,6 +30,7 @@ const CompleteAgmt = () => {
             <Text fontSize={"2xl"} fontWeight={"semibold"} color={'purple.700'} textAlign={'center'} mb={"20px"} >Signed Agreements</Text>
             <Button onClick={showAgmt} variant={"solid"} colorScheme={'purple'} >Show List</Button>
             <Divider/>
+            <Flex flexDirection={'column-reverse'} >
             {
                  Object.keys(agmts).map((agmt, index) => (
                      
@@ -51,6 +52,7 @@ const CompleteAgmt = () => {
                     </Flex>
                  ))
             }
+            </Flex> 
         </Flex>
      );
 }
