@@ -1,12 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import { Button, Flex } from '@chakra-ui/react';
+import { Button, Flex, Text } from '@chakra-ui/react';
 
 function App() {
   return (
-    <Flex flexDirection={"column"}  justifyContent={"center"} alignItems={'center'} width={"100vw"} height={"100vh"} bgColor={"gray.200"} >
-      <Button variant={"solid"} colorScheme={'purple'} mt={"15px"} color={'white'} >Don't have a Crypto Wallet? Continue to Payment</Button>
+    <Flex flexDirection={"column"}  justifyContent={"center"} alignItems={'center'} width={"100%"} height={"100vh"} bgColor={"gray.200"} >
+      <Text color={"purple.700"} fontSize={"4xl"} fontWeight={'extrabold'} >Welcome to DeRento OnChain Agreement Signer</Text>
+      <Text color={"purple.700"} fontSize={"4xl"} fontWeight={'extrabold'} mb={'50px'} >Create, Publish & Sign your Agreements with the security of Blockchain</Text>
       <Button variant={"solid"} colorScheme={'purple'} mt={"15px"} color={'white'} >Continue to Sign Agreement</Button>
+      <Button variant={"solid"} colorScheme={'purple'} mt={"15px"} color={'white'} >Don't have a Crypto Wallet? Continue to Payment</Button>
     </Flex>
   );
 }

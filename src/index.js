@@ -18,8 +18,9 @@ import {
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 import Navbar from './components/Navbar';
+import Agreement from './Agreement';
 const { chains, provider } = configureChains(
-  [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum],
+  [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum, chain.polygonMumbai],
   [
     alchemyProvider({ alchemyId: process.env.ALCHEMY_ID }),
     publicProvider()
@@ -44,7 +45,7 @@ root.render(
       <RainbowKitProvider chains={chains}>
     <ChakraProvider>
       <Navbar/>
-    <App />
+    <Agreement/>
     </ChakraProvider>
     </RainbowKitProvider>
     </WagmiConfig>
